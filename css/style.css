@@ -1,0 +1,645 @@
+@import url(./nullstyle.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@font-face {
+    font-family: Larsseit;
+    src: url(../fonts/Larsseit-Bold.otf), url(../fonts/Larsseit-BoldItalic.otf), url(../fonts/Larsseit-ExtraBold.otf), url(../fonts/Larsseit-ExtraBoldItalic.otf), url(../fonts/Larsseit-Italic.otf), url(../fonts/Larsseit-Light.otf), url(../fonts/Larsseit-LightItalic.otf), url(../fonts/Larsseit-Medium.otf), url(../fonts/Larsseit-MediumItalic.otf), url(../fonts/Larsseit-Thin.otf), url(../fonts/Larsseit-ThinItalic.otf), url(../fonts/Larsseit.otf);
+}
+html, 
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(34, 53, 111, 1);
+}
+.wrapper {
+    position: relative;
+}
+.section-wrapper{
+    max-width: 1920px;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%;
+}
+
+/*Nav*/
+
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+}
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo{
+    transition: 0.5s;
+    z-index: 3;
+}
+.nav-logo:hover{
+    color: rgba(34, 53, 111, 1);
+}
+.logo {
+    font-family: Larsseit;
+    font-size: 24px;
+    color: rgba(98, 208, 223, 1);
+}
+.header-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.nav-menu a{
+    font-size: 18px;
+    color: rgba(34, 53, 111, 1);
+    letter-spacing: 1.5px;
+    padding: 15px;
+    border-bottom: 2px solid rgb(244, 249, 226);
+    transition: 0.5s;
+}
+.nav-menu a:hover{
+    border-bottom: 2px solid rgba(34, 53, 111, 1);   
+}
+.nav-button button{
+    display: inline-block;
+    background-color: rgba(98, 208, 223, 1);
+    color: #fff;
+    letter-spacing: 1.5px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: 0.5s;
+    border-color: inherit;
+}
+.nav-button button:hover{
+    background-color: rgba(34, 53, 111, 1);
+}
+@media (max-width: 450px) {
+    .nav-button button{
+        padding: 10px 20px;
+    }
+}
+@media (max-width: 340px) {
+    .nav-button button{
+        display: none;
+    }
+}
+
+/*Burger Menu*/
+
+.hamb, 
+.popup {
+    display: none;
+}
+@media (max-width: 900px) {
+    .nav-menu{
+      display: none;
+    }
+    #main-header{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        background-color: rgba(244, 249, 226, 1);
+    }
+    .hamb {
+      display: flex;
+      align-items: center;
+    }
+    .hamb__field {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .bar {
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin: 6px auto;
+      background-color: rgb(34,53,111);
+      transition: 0.2s;
+      z-index: 4;
+    }
+    .popup {
+      position: fixed;
+      left: 0;
+      top: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(244, 249, 226, 1);
+      z-index: 3;
+      display: flex;
+      transition: 0.3s;
+    }
+    .popup.open {
+      top: 70px;
+    }
+    .popup .nav-menu {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 50px 0;
+      overflow: auto;
+    }
+    .popup .nav-menu ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    .popup .nav-menu li {
+      margin: 10% 0;
+    }
+    .popup .nav-menu a {
+      font-size: 20px;
+      font-weight: bold;
+      color: rgb(34,53,111);
+    }
+    .hamb__field.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .hamb__field.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .hamb__field.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+    body.noscroll {
+      overflow: hidden;
+    }
+  }
+
+/*Main*/
+
+main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    background-color: rgb(244, 249, 226);
+}
+.main__cta{
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 0 5px;
+}
+h1{
+    font-size: calc(24px + ( 48 - 24 ) * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(30px + ( 55 - 30 ) * ((100vw - 320px) / (1920 - 320)));
+    margin: 30px 0;
+    font-weight: bold;
+}
+.main__cta p{
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 50px;
+}
+.btn-orange{
+    font-size: 18px;
+    padding: 15px 30px;
+    background-color: rgba(249, 182, 64, 1);
+    color: #fff;
+    border: 1px solid rgba(249, 182, 64, 1);
+    margin-right: 20px;
+    transition: 0.5s;
+}
+.btn-orange:hover{
+    background-color: rgba(244, 249, 226, 1);
+    color: rgba(249, 182, 64, 1);
+    border: 1px solid rgba(249, 182, 64, 1);
+}
+.btn-colorless{
+    font-size: 18px;
+    color: rgba(249, 182, 64, 1);
+    padding: 15px 30px;
+    border: 1px solid rgba(244, 249, 226, 1);
+    transition: 0.5s;
+}
+.btn-colorless:hover{
+    border: 1px solid rgba(249, 182, 64, 1);
+}
+.main__empty {
+    background: url(../img/linkedin-sales-navigator-406825.jpg) top right / auto 100%  repeat;
+}
+@media (max-width:517px){
+    .btn-colorless,
+    .btn-orange{
+        display: inline-block;
+    }
+    .main__empty {
+        display: none;
+    }
+    main {
+        display: block;
+    }
+    .main__cta{
+        margin: 10% auto 0;
+        padding: 0 5px 5%;
+    }
+}
+
+/*Why*/
+
+.container-3 {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.why__content{
+    background-color: rgba(98, 208, 223, 1);
+}
+.section-body {
+    max-width: 750px;
+    margin: 10% auto ;
+    padding: 10px;
+}
+h2{
+    font-size: 36px;
+}
+.why__header{
+    color: #fff;
+    margin-bottom: 100px;
+}
+.why__body p {
+    color: #fff;
+}
+.content-text{
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 300;
+}
+.why__image{
+    background: url(../img/christopher-campbell-40367.jpg) 0 0 / auto 100% no-repeat;
+}
+@media (max-width:888px){  
+    .why__header{
+        margin-bottom: 40px;
+    }
+    .content-text{
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+@media (max-width:769px){
+    .why__header{
+        margin-bottom: 20px;
+    }
+}
+@media (max-width:752px){
+    .why__body{
+        margin: 3% auto 0;
+    }
+}
+@media (max-width:722px){
+    h2{
+        font-size: 24px;
+    }
+    .content-text{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .why__image{
+        background: url(../img/christopher-campbell-40367.jpg) 0 0 / 100% auto no-repeat;
+    }
+}
+@media (max-width:686px){
+    .why__image{
+        background: url(../img/christopher-campbell-40367.jpg) 0 0 / auto 100% no-repeat;
+    }
+}
+@media (max-width:431px){
+    .container-3 {
+        grid-template: 1fr 1fr / 1fr;
+    }
+    .why__image{
+        background: url(../img/christopher-campbell-40367.jpg) 0 / cover no-repeat;
+    }
+}
+
+/*About*/
+
+.about__container {
+    padding: 5% 10px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.about__body {
+    max-width: 750px;
+    margin: 0 auto;
+}
+.about__header {
+    margin: 0 0 0 5%;
+}
+@media (max-width:517px){
+    .about__container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .about__header {
+        margin: 5% auto;
+    }
+}
+
+/*services*/
+
+.services {
+    background-color: rgb(244, 249, 226);
+}
+.services__header {
+    text-align: center;
+    padding: 20px 0;
+}
+.services__gridrow-1 {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    transition: 0.5s;
+}
+.item-1{background-color: rgb(34,53,111);}
+.item-2{background-color: rgb(0,82,193);}
+.item-3{background-color: rgb(118,181,139);}
+.item-4{background-color: rgb(196,231,105);}
+.item-5{background-color: rgb(98,208,223);}
+.item-6{background-color: rgb(143,0,255);}
+
+.row-1-item-header {
+    border-top: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    margin: 40px auto 60px;
+    padding-top: 40px;
+    width: 70%;
+}
+h3{
+    font-size: calc(14px + ( 30 - 14 ) * ((100vw - 320px) / (1920 - 320)));
+    line-height: calc(18px + ( 36 - 14 ) * ((100vw - 320px) / (1920 - 320)));
+}
+h3 a{
+    color: #fff;
+    text-decoration: none;
+    padding: 40px 40px 40px 0;
+}
+@media (min-width:520px){
+    .services__gridrow-1 {
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    }
+}
+@media (min-width:767px){
+    .services__header {
+        padding: 40px 0;
+    }
+    .services__gridrow-1 {
+        grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+    .services__gridrow-1:has(.item-1:hover){
+        grid-template-columns: 1.5fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr;
+    }.services__gridrow-1:has(.item-2:hover){
+        grid-template-columns: 0.9fr 1.5fr 0.9fr 0.9fr 0.9fr 0.9fr;
+    }.services__gridrow-1:has(.item-3:hover){
+        grid-template-columns: 0.9fr 0.9fr 1.5fr 0.9fr 0.9fr 0.9fr;
+    }.services__gridrow-1:has(.item-4:hover){
+        grid-template-columns: 0.9fr 0.9fr 0.9fr 1.5fr 0.9fr 0.9fr;
+    }.services__gridrow-1:has(.item-5:hover){
+        grid-template-columns: 0.9fr 0.9fr 0.9fr 0.9fr 01.5fr 0.9fr;
+    }.services__gridrow-1:has(.item-6:hover){
+        grid-template-columns: 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr 1.5fr;
+    }
+}
+
+
+
+/*Help*/
+
+.container-2{
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.help__image {
+    background: url(../img/linkedin-sales-navigator-402831.jpg) 0 40% / cover no-repeat;
+}
+.help__body p{
+    line-height: 42px;
+    margin-bottom: 20%;
+}
+.help__header {
+    margin-bottom: 20%;
+}
+.help-btn{
+    border-color: #fff;
+}
+@media (max-width:888px){
+    .help__body p{
+        line-height: 36px;
+        margin-bottom: 10%;
+    }
+    .help__header {
+        margin-bottom: 10%;
+    }
+}
+@media (max-width:767px){
+    .help__body p{
+        line-height: 28px;
+    }
+    .help__header {
+        margin-bottom: 5%;
+    }
+}
+@media (max-width:767px){
+    .help__body {
+        margin-top: 5%;
+    }
+    .help__body p{
+        margin-bottom: 5%;
+    } 
+}
+@media (max-width:431px){
+    .container-2{
+        grid-template: 1fr 1fr / 1fr;
+    }
+    .help__image {
+        grid-row-start: 1;
+    }
+}
+
+
+/*Contact*/
+
+.contact__content {
+    background-color: rgb(34,53,111);
+    display: flex;
+    align-items: center;
+}
+.contact__body {
+    color: #fff;
+}
+.contact__body p{
+    line-height: 42px;
+    margin-bottom: 20%;
+}
+.contact__header {
+    margin-bottom: 10%;
+}
+.contact-btn {
+    border-color: rgb(34,53,111);
+}
+.contact__image {
+    background: url(../img/charles-etoroma-390119.jpg) 0 60% / cover no-repeat;
+}
+@media (max-width:776px){
+    .contact__body p{
+        line-height: 30px;
+        margin-bottom: 10%;
+    }
+    .contact__header {
+        margin-bottom: 5%;
+    }
+}
+@media (max-width:776px){
+    .contact__body p{
+        line-height: 24px;
+        margin-bottom: 5%;
+    }
+}
+@media (max-width:431px){
+    .contact__image {
+        background: url(../img/charles-etoroma-390119.jpg) 0 40% / cover no-repeat;
+    }
+}
+
+/*Footer*/
+
+.footer__container {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.footer__image {
+    background: url(../img/autumn-goodman-242825.jpg) 0 0 / cover no-repeat;
+}
+.footer__content {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-items: center;
+    gap: 10px;
+    padding: 5px;
+    margin: 10% 0;
+}
+.footer__item-header {
+    margin: 50px 0 30px;
+}
+h5{
+    font-size: 20px;
+    font-weight: 700;
+}
+.footer__item-text {
+    line-height: 24px;
+}
+.footer__row-2 {
+    background-color: rgb(98,208,223);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+@media (max-width:1075px){
+    .footer__content{
+        grid-template: auto auto / 1fr 1fr;
+        grid-template-areas: 'first-child first-child' 'second-child third-child';
+        justify-items: start;
+    }
+    .footer__item:nth-child(1){
+        grid-area: first-child;
+    }
+    .footer__item:nth-child(2){
+        grid-area: second-child;
+    }
+    .footer__item:nth-child(3){
+        grid-area: third-child;
+    }
+    .footer__item-header {
+        margin: 20px 0 0;
+    }
+    .footer__image {
+        background: url(../img/autumn-goodman-242825.jpg) 50% 0 / cover no-repeat;
+    }
+}
+@media (max-width:870px){
+    .footer__content{
+        grid-template: auto auto auto / 1fr;
+        justify-items: start;
+        grid-template-areas: 'first-child' 'second-child' 'third-child';
+        gap: 0;
+    }
+    .footer__item:nth-child(1){
+        grid-area: first-child;
+    }
+    .footer__item:nth-child(2){
+        grid-area: second-child;
+    }
+    .footer__item:nth-child(3){
+        grid-area: third-child;
+    }
+    .footer__item-header {
+        margin: 5px 0 0;
+    }
+    .footer__container {
+       grid-template-columns: auto 1fr;
+    }
+    
+}
+@media (max-width:773px){
+    h5{
+        font-size: 18px;
+    }
+    .footer__item-text {
+        line-height: 20px;
+    }
+}
+@media (max-width:431px){
+    .footer__container{
+        grid-template: 1fr 1fr / 1fr;
+    }
+    .footer__image {
+        grid-row-start: 1;
+        background: url(../img/autumn-goodman-242825.jpg) 50% 0 / cover no-repeat;
+    }
+}
+@media (max-width:335px){
+    
+    .footer__content {
+        margin: 10% 0 ;
+    }
+}
+
+/*Modal*/
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal-body a{
+    font-size: 18px;
+}
+.modal-body input{
+    border: 1px solid rgba(34, 53, 111, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0 20px;
+}
+.modal-footer{
+    justify-content: center;
+}
+h6{
+    font-size: 24px;
+}
+.btn-custom{
+    background-color: rgb(98,208,223);
+    padding: 15px 50px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+.btn-custom:hover{
+    background-color: rgb(34,53,111);
+    color: #fff;
+}
