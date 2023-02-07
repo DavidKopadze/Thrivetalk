@@ -1,1 +1,1 @@
-# Thrivetalk
+https://davidkopadze.github.io/Thrivetalk/
